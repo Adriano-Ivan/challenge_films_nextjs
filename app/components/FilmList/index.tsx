@@ -1,23 +1,21 @@
 "use client";
 import { FilmEntity } from "@infrastructure/types";
 import { useFilmList } from "./useFilmList";
-import { Button, Space } from "antd";
+import { Space } from "antd";
+import FilmCard from "@components/FilmCard";
+import FilmDetails from "@components/FilmDetails";
 
-function FilmList({ dataFilms }: { dataFilms: FilmEntity[] }) {
-  useFilmList(dataFilms);
+function FilmList() {
+  const { dataFilms } = useFilmList();
   return (
-    <Space direction="vertical">
-      {dataFilms?.map((f: FilmEntity, i: number) => {
-        return (
-          <div key={`${i}-${f.Title}-${f.Year}`}>
-            <Button>
-              {" "}
-              <b>{f.Title}</b>
-            </Button>
-          </div>
-        );
-      })}
-    </Space>
+    <>
+      <FilmDetails />
+      <Space direction="vertical">
+        {dataFilms?.map((f: FilmEntity, i: number) => {
+          return <FilmCard film={f} />;
+        })}
+      </Space>
+    </>
   );
 }
 

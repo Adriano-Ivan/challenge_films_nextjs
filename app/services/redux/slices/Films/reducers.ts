@@ -1,13 +1,24 @@
 import { FilmEntity } from "@infrastructure/types";
-import { createAction } from "@reduxjs/toolkit";
+import { createAction, createAsyncThunk } from "@reduxjs/toolkit";
+import axiosFilmsInstance from "@services/api/axiosFilmsInstance.api";
 
-export const defineFilmsList = createAction(
-  "configuracaoTabelaVisualizacao/updateConfiguracaoTabelaVisualizacaoList",
-  function prepare(listFilms: FilmEntity[]) {
+export const defineSelectedFilm = createAction(
+  "filmEntity/defineSelectedFilm",
+  function prepare(film: FilmEntity | null) {
     return {
       payload: {
-        listFilms,
+        film,
       },
     };
+  }
+);
+
+export const listFilmsAsync = createAsyncThunk(
+  "filmEntity/listFilmsAsync",
+  async () => {
+    // const response = await axiosFilmsInstance.get<ListFilmsResponse>("/movies");
+    const response = await axiosFilmsInstance.get<FilmEntity[]>("/movies");
+
+    return response;
   }
 );

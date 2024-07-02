@@ -12,8 +12,6 @@ export type FilmEntity = {
   Language: string;
 };
 
-export interface FilmsState {
-  films: FilmEntity[];
-  filteredFilms: FilmEntity[];
-  currentSelectedFilm: FilmEntity | null;
+export interface FilmsState extends ListEntityState<FilmEntity> {
+  selectedFilm: FilmEntity | null;
 }
