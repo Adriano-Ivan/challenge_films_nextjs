@@ -1,29 +1,32 @@
 import { defineSelectedFilm } from "@services/redux/slices/Films/reducers";
 import { useAppDispatch, useAppSelector } from "@services/redux/store";
-import { Modal } from "antd";
+import { Image, Modal } from "antd";
 
 function FilmDetails() {
   const dispatch = useAppDispatch();
   const selectedFilm = useAppSelector((e) => e.films.selectedFilm);
 
-  const goList = () => {
+  const onCloseModal = () => {
+    console.log("clsoe @@@@@");
     dispatch(defineSelectedFilm(null));
   };
 
   return (
     <>
       <Modal
-        onClose={() => {
-          console.log("clsoe @@@@@");
-          dispatch(defineSelectedFilm(null));
-        }}
-        onCancel={() => {
-          console.log("clsoe @@@@@");
-          dispatch(defineSelectedFilm(null));
-        }}
+        onClose={onCloseModal}
+        onCancel={onCloseModal}
+        width={"55vw"}
         open={selectedFilm !== null}
       >
-        {selectedFilm && <h1>{selectedFilm.Title}</h1>}
+        {selectedFilm && (
+          <>
+            <Image src={selectedFilm.Poster} />
+            <h1>
+              {selectedFilm.Title} - {selectedFilm.Director}
+            </h1>
+          </>
+        )}
       </Modal>
     </>
   );
