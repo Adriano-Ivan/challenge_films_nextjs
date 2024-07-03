@@ -1,3 +1,4 @@
+"use client";
 import { defineSelectedFilm } from "@services/redux/slices/Films/reducers";
 import { useAppDispatch, useAppSelector } from "@services/redux/store";
 import { Image, Modal } from "antd";
@@ -18,6 +19,8 @@ function FilmDetails() {
         onCancel={onCloseModal}
         width={"55vw"}
         open={selectedFilm !== null}
+        okButtonProps={{ style: { display: "none" } }}
+        cancelText={"Fechar"}
       >
         {selectedFilm && (
           <>

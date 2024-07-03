@@ -8,7 +8,7 @@ export const useFilmList = () => {
   const sizePage = 4;
   const [page, setPage] = useState(0);
   const skip = useMemo(() => page * sizePage, [page]);
-  const progressUntil = useMemo(() => page * sizePage + sizePage, [page]);
+  const progressUntil = useMemo(() => skip + sizePage, [page, skip]);
 
   useEffect(() => {
     dispatch(listFilmsAsync());
@@ -25,6 +25,7 @@ export const useFilmList = () => {
     progressUntil,
     sizePage,
     sizeList: filmsDataRedux.entities.length,
+    thereIsSelectedFilm: filmsDataRedux.selectedFilm !== null,
     definePage,
   };
 };
