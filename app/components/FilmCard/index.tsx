@@ -11,7 +11,12 @@ function FilmCard({ film }: { film: FilmEntity }) {
   };
   return (
     <>
-      <Button onClick={onSelectedCard}>{film.Title}</Button>
+      <Button
+        style={{ backgroundColor: "#00F", color: "#FFF" }}
+        onClick={onSelectedCard}
+      >
+        {film.Title}
+      </Button>
       {/* <Button
         onClick={() => {
           router.push("detailedfilm");

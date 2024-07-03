@@ -10,6 +10,7 @@ export type FilmEntity = {
   Country: string;
   Awards: string;
   Language: string;
+  imdbID: string;
 };
 
 export interface FilmsState extends ListEntityState<FilmEntity> {
