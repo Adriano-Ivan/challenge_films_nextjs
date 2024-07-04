@@ -34,7 +34,7 @@ Após executar, acesse [http://localhost:3000](http://localhost:3000) - ou com a
 - [`Ant Design`](https://ant.design/)
 - [`Redux`](https://redux.js.org/)
 - [`Axios`](https://axios-http.com/ptbr/docs/intro)
-- [`TypeScript`](`https://www.typescriptlang.org/`)
+- [`TypeScript`](https://www.typescriptlang.org/)
 
 ## Features
 
