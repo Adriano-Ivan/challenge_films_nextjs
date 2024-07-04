@@ -19,5 +19,4 @@ export const thirdInformationColumnDetailsStyle: React.CSSProperties = {
 
 export const extraThirdInformationColumnContentStyle: React.CSSProperties = {
   width: "100%",
-  //   paddingLeft: 10,
 };

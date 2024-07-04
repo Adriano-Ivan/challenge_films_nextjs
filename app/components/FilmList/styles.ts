@@ -2,7 +2,6 @@ import { CONSTANTS_VALUES } from "@infrastructure/values";
 
 export const filmsColumnStyles: React.CSSProperties = {
   width: "100%",
-  // backgroundColor: "red",
   height: `calc(${CONSTANTS_VALUES.CONTENT_HEIGHT} - 10vh)`,
   justifyItems: "center",
   alignItems: "center",

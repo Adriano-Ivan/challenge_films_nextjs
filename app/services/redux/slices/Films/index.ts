@@ -56,10 +56,6 @@ const filmsSlice = createSlice({
           });
         }
       });
-    // builder.addCase(defineFilmsList, (state, action) => {
-    //   state.films = [...action.payload.listFilms];
-    //   state.filteredFilms = [...action.payload.listFilms];
-    // });
   },
 });
 

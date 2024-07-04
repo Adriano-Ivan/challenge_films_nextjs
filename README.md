@@ -24,7 +24,7 @@ pnpm dev
 bun dev
 ```
 
-Acesse [http://localhost:3000](http://localhost:3000) para testar a aplicação.
+Após executar, acesse [http://localhost:3000](http://localhost:3000) - ou com a porta indicada no console - para testar a aplicação.
 
 ## Features
 

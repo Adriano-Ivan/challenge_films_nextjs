@@ -48,39 +48,6 @@ function FilmCard({ film }: { film: FilmEntity }) {
               </Button>
             </Col>
           </Row>
-          {/* <Space>
-            <Image src={film.Poster} style={filmImageStyle} />
-            <Button
-              style={{ backgroundColor: "#00F", color: "#FFF" }}
-              onClick={onSelectedCard}
-            >
-              {film.Title}
-            </Button>
-          </Space> */}
-          {/* 
-          <Flex
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              height: "100%",
-              flex: 1,
-              backgroundColor: "yellow",
-            }}
-          >
-            <Button
-              style={{ backgroundColor: "#00F", color: "#FFF" }}
-              onClick={onSelectedCard}
-            >
-              {"estrelas"}
-            </Button>
-            <Button
-              style={{ backgroundColor: "#00F", color: "#FFF" }}
-              onClick={onSelectedCard}
-            >
-              {film.Title}
-            </Button>
-          </Flex> */}
         </Card>
       </Col>
     </Row>
