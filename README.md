@@ -2,7 +2,7 @@ Essa é uma aplicação em [Next.js](https://nextjs.org/), criada com [`create-n
 
 # LISTAGEM DE FILMES
 
-## Instalação de dependências
+## Instalação de dependências:
 
 Algumas formas de instalar as dependências
 
