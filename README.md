@@ -1,4 +1,4 @@
-Essa é uma aplicação em [Next.js](https://nextjs.org/), criada com [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
+Essa é uma aplicação em React com [Next.js](https://nextjs.org/), criada com [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
 
 # LISTAGEM DE FILMES
 
@@ -25,6 +25,15 @@ bun dev
 ```
 
 Após executar, acesse [http://localhost:3000](http://localhost:3000) - ou com a porta indicada no console - para testar a aplicação.
+
+# Ferramentas e tecnologias do projeto
+
+- [Next.js](https://nextjs.org/)
+- [React.js](https://react.dev/)
+- [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
+- [`Ant Design`](https://ant.design/)
+- [`Redux`](https://redux.js.org/)
+- [`Axios`](https://axios-http.com/ptbr/docs/intro)
 
 ## Features
 
