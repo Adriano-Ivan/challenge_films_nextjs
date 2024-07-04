@@ -1,3 +1,4 @@
+import { HttpRequestStatus } from "@infrastructure/types";
 import { listFilmsAsync } from "@services/redux/slices/Films/reducers";
 import { useAppDispatch, useAppSelector } from "@services/redux/store";
 import { useEffect, useMemo, useState } from "react";
@@ -26,6 +27,7 @@ export const useFilmList = () => {
     sizePage,
     sizeList: filmsDataRedux.entities.length,
     thereIsSelectedFilm: filmsDataRedux.selectedFilm !== null,
+    loading: filmsDataRedux.listStatus === HttpRequestStatus.loading,
     definePage,
   };
 };

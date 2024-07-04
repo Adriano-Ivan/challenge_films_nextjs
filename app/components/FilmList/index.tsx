@@ -8,8 +8,11 @@ import React from "react";
 import {
   containerContentStyles,
   filmsColumnStyles,
+  loadingContainerContentStyles,
   paginationContainerStyles,
 } from "./styles";
+import { Spin } from "antd";
+import { LoadingOutlined } from "@ant-design/icons";
 
 function FilmList() {
   const {
@@ -19,6 +22,7 @@ function FilmList() {
     sizeList,
     sizePage,
     thereIsSelectedFilm,
+    loading,
     definePage,
   } = useFilmList();
 
@@ -26,7 +30,11 @@ function FilmList() {
     definePage(page - 1);
   };
 
-  return (
+  return loading ? (
+    <Space style={loadingContainerContentStyles}>
+      <Spin indicator={<LoadingOutlined spin />} />
+    </Space>
+  ) : (
     <>
       <Space direction="vertical" style={containerContentStyles}>
         {thereIsSelectedFilm && <FilmDetails />}

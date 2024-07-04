@@ -20,3 +20,12 @@ export const containerContentStyles: React.CSSProperties = {
   height: `calc(${CONSTANTS_VALUES.CONTENT_HEIGHT} - 10vh)`,
   backgroundColor: "#ddd",
 };
+
+export const loadingContainerContentStyles: React.CSSProperties = {
+  width: "100%",
+  height: `calc(${CONSTANTS_VALUES.CONTENT_HEIGHT} - 10vh)`,
+  backgroundColor: "#ddd",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+};
