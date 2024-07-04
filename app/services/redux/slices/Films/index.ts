@@ -29,7 +29,7 @@ const filmsSlice = createSlice({
         state.listStatus = HttpRequestStatus.succeeded;
         state.entities = action.payload.data.map((film) => {
           const localRating = getFilmRatingRegister(film.imdbID);
-          return { ...film, localRating: localRating ? localRating : 1 };
+          return { ...film, localRating: localRating ? localRating : 3 };
         });
       })
       .addCase(listFilmsAsync.rejected, (state) => {
