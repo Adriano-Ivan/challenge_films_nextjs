@@ -28,7 +28,6 @@ export const updateLocalFilmRating = createAction(
 export const listFilmsAsync = createAsyncThunk(
   "filmEntity/listFilmsAsync",
   async () => {
-    // const response = await axiosFilmsInstance.get<ListFilmsResponse>("/movies");
     const response = await axiosFilmsInstance.get<FilmEntity[]>("/movies");
 
     return response;
