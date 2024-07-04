@@ -26,7 +26,7 @@ bun dev
 
 Após executar, acesse [http://localhost:3000](http://localhost:3000) - ou com a porta indicada no console - para testar a aplicação.
 
-# Ferramentas e tecnologias do projeto
+## Ferramentas e tecnologias do projeto
 
 - [Next.js](https://nextjs.org/)
 - [React.js](https://react.dev/)
