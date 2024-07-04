@@ -1,7 +1,19 @@
 "use client";
 import { defineSelectedFilm } from "@services/redux/slices/Films/reducers";
 import { useAppDispatch, useAppSelector } from "@services/redux/store";
-import { Image, Modal } from "antd";
+import { Image, Modal, Space } from "antd";
+import React from "react";
+
+const modalStyles = {
+  top: 10,
+};
+
+const contentContainerStyles: React.CSSProperties = {
+  width: "100%",
+  marginTop: 25,
+  maxHeight: "490px",
+  overflowY: "auto",
+};
 
 function FilmDetails() {
   const dispatch = useAppDispatch();
@@ -17,18 +29,25 @@ function FilmDetails() {
       <Modal
         onClose={onCloseModal}
         onCancel={onCloseModal}
-        width={"55vw"}
+        width={"80vw"}
         open={selectedFilm !== null}
         okButtonProps={{ style: { display: "none" } }}
         cancelText={"Fechar"}
+        style={modalStyles}
       >
         {selectedFilm && (
-          <>
+          <Space direction="vertical" style={contentContainerStyles}>
             <Image src={selectedFilm.Poster} />
             <h1>
               {selectedFilm.Title} - {selectedFilm.Director}
             </h1>
-          </>
+            <h1>
+              {selectedFilm.Title} - {selectedFilm.Director}
+            </h1>
+            <h1>
+              {selectedFilm.Title} - {selectedFilm.Director}
+            </h1>
+          </Space>
         )}
       </Modal>
     </>

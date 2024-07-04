@@ -4,8 +4,30 @@ import { useFilmList } from "./hooks/useFilmList";
 import { Col, Pagination, Space } from "antd";
 import FilmCard from "@components/FilmCard";
 import FilmDetails from "@components/FilmDetails";
-import AppContainer from "@components/AppContainer";
 import { CONSTANTS_VALUES } from "@infrastructure/values";
+import React from "react";
+
+const filmsColumnStyles: React.CSSProperties = {
+  width: "100%",
+  // backgroundColor: "red",
+  height: `calc(${CONSTANTS_VALUES.CONTENT_HEIGHT} - 10vh)`,
+  justifyItems: "center",
+  alignItems: "center",
+  overflowY: "auto",
+};
+
+const paginationContainerStyles: React.CSSProperties = {
+  backgroundColor: "#ccc",
+  width: "100%",
+  justifyContent: "center",
+  height: `calc(${CONSTANTS_VALUES.CONTENT_HEIGHT} - 80vh)`,
+};
+
+const containerContentStyles: React.CSSProperties = {
+  width: "100%",
+  height: `calc(${CONSTANTS_VALUES.CONTENT_HEIGHT} - 10vh)`,
+  backgroundColor: "#ddd",
+};
 
 function FilmList() {
   const {
@@ -24,35 +46,10 @@ function FilmList() {
 
   return (
     <>
-      {thereIsSelectedFilm && <FilmDetails />}
+      <Space direction="vertical" style={containerContentStyles}>
+        {thereIsSelectedFilm && <FilmDetails />}
 
-      <Space
-        direction="vertical"
-        style={{
-          width: "100%",
-          height: `calc(${CONSTANTS_VALUES.CONTENT_HEIGHT} - 10vh)`,
-          backgroundColor: "gray",
-        }}
-      >
-        {/* <Space direction="horizontal" style={{ width: "100%" }}> */}
-        {/* <Space
-          direction="vertical"
-          style={{
-            width: "100%",
-            height: "inherit",
-            backgroundColor: "purple",
-          }}
-        > */}
-        <Col
-          style={{
-            width: "100%",
-            backgroundColor: "red",
-            height: `calc(${CONSTANTS_VALUES.CONTENT_HEIGHT} - 10vh)`,
-            justifyItems: "center",
-            alignItems: "center",
-            overflowY: "auto",
-          }}
-        >
+        <Col style={filmsColumnStyles}>
           {dataFilms?.slice(skip, progressUntil).map((f: FilmEntity) => {
             return <FilmCard film={f} key={`${f.imdbID}`} />;
           })}
@@ -66,14 +63,7 @@ function FilmList() {
         {/* </Space> */}
       </Space>
 
-      <Space
-        style={{
-          backgroundColor: "pink",
-          width: "100%",
-          justifyContent: "center",
-          height: `calc(${CONSTANTS_VALUES.CONTENT_HEIGHT} - 80vh)`,
-        }}
-      >
+      <Space style={paginationContainerStyles}>
         <Pagination
           onChange={definePaginationPage}
           pageSize={sizePage}

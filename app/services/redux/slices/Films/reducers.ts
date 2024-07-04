@@ -13,6 +13,18 @@ export const defineSelectedFilm = createAction(
   }
 );
 
+export const updateLocalFilmRating = createAction(
+  "filmEntity/updateLocalFilmRating",
+  function prepare(imdbId: string, localRating: number) {
+    return {
+      payload: {
+        imdbId,
+        localRating,
+      },
+    };
+  }
+);
+
 export const listFilmsAsync = createAsyncThunk(
   "filmEntity/listFilmsAsync",
   async () => {

@@ -1,31 +1,99 @@
+import AppParagraph from "@components/utils/AppParagraph";
+import AppRatingStar from "@components/utils/AppRatingStars";
+import TextTitle from "@components/utils/TextTitle";
 import { FilmEntity } from "@infrastructure/types";
-import { defineSelectedFilm } from "@services/redux/slices/Films/reducers";
+import {
+  defineSelectedFilm,
+  updateLocalFilmRating,
+} from "@services/redux/slices/Films/reducers";
 import { useAppDispatch } from "@services/redux/store";
-import { Button, Card, Col, Row } from "antd";
+import { Button, Card, Col, Image, Row } from "antd";
+
+const rowFilmCardStyle: React.CSSProperties = {
+  justifyContent: "center",
+};
+
+const cardFilmStyle: React.CSSProperties = {
+  width: "100%",
+  marginTop: 10,
+};
+
+const filmImageStyle: React.CSSProperties = {
+  height: "16em",
+};
+
+const actionsContainerStyle: React.CSSProperties = {
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
+};
 
 function FilmCard({ film }: { film: FilmEntity }) {
   const dispatch = useAppDispatch();
-  // const router = useRouter();
+
   const onSelectedCard = () => {
     dispatch(defineSelectedFilm(film));
   };
+
+  const onChangeRating = (newRating: number) => {
+    dispatch(updateLocalFilmRating(film.imdbID, newRating));
+  };
+
   return (
-    <Row style={{ backgroundColor: "yellow", justifyContent: "center" }}>
+    <Row style={rowFilmCardStyle}>
       <Col md={16} xs={24} sm={24}>
-        <Card
-          style={{
-            width: "100%",
-            marginTop: 10,
-            display: "flex",
-            justifyContent: "start",
-          }}
-        >
-          <Button
-            style={{ backgroundColor: "#00F", color: "#FFF" }}
-            onClick={onSelectedCard}
+        <Card style={cardFilmStyle}>
+          <Row>
+            <Col xs={24} xl={8} md={12}>
+              <Image src={film.Poster} style={filmImageStyle} />
+            </Col>
+            <Col xs={24} xl={8} md={12}>
+              <TextTitle level={4} text={film.Title} />
+              <AppParagraph text={film.Plot} />
+            </Col>
+            <Col style={actionsContainerStyle} xs={24} xl={8} md={24}>
+              <AppRatingStar
+                defaultValue={film.localRating}
+                onChangeRating={onChangeRating}
+              />
+              <Button onClick={onSelectedCard} type="primary">
+                More details
+              </Button>
+            </Col>
+          </Row>
+          {/* <Space>
+            <Image src={film.Poster} style={filmImageStyle} />
+            <Button
+              style={{ backgroundColor: "#00F", color: "#FFF" }}
+              onClick={onSelectedCard}
+            >
+              {film.Title}
+            </Button>
+          </Space> */}
+          {/* 
+          <Flex
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              height: "100%",
+              flex: 1,
+              backgroundColor: "yellow",
+            }}
           >
-            {film.Title}
-          </Button>
+            <Button
+              style={{ backgroundColor: "#00F", color: "#FFF" }}
+              onClick={onSelectedCard}
+            >
+              {"estrelas"}
+            </Button>
+            <Button
+              style={{ backgroundColor: "#00F", color: "#FFF" }}
+              onClick={onSelectedCard}
+            >
+              {film.Title}
+            </Button>
+          </Flex> */}
         </Card>
       </Col>
     </Row>

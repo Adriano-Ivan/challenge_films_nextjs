@@ -9,14 +9,14 @@ const headerStyle: React.CSSProperties = {
   color: "#fff",
   height: CONSTANTS_VALUES.HEADER_VALUE,
   paddingInline: 48,
-  backgroundColor: "#4096ff",
+  // backgroundColor: "#fff",
 };
 
 const contentStyle: React.CSSProperties = {
   textAlign: "center",
   height: CONSTANTS_VALUES.CONTENT_HEIGHT,
   color: "#fff",
-  backgroundColor: "#0958d9",
+  // backgroundColor: "#0958d9",
 };
 
 const layoutStyle: React.CSSProperties = {
