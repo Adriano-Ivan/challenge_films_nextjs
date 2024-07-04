@@ -2,18 +2,7 @@
 import { Select, Space } from "antd";
 import { useSearchFilmsArea } from "./hooks/useSearchFilmsArea";
 import React from "react";
-
-const containerSearchStyle: React.CSSProperties = {
-  width: "100%",
-  justifyContent: "center",
-};
-
-const searchFilmsStyle: React.CSSProperties = {
-  minWidth: "320px",
-  backgroundColor: "yellow",
-  height: "90%",
-  fontSize: 40,
-};
+import { containerSearchStyle, searchFilmsStyle } from "./styles";
 
 function SearchFilmsArea() {
   const { options, onChange, onSearch } = useSearchFilmsArea();

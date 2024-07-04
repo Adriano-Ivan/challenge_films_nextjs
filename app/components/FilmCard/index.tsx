@@ -8,25 +8,12 @@ import {
 } from "@services/redux/slices/Films/reducers";
 import { useAppDispatch } from "@services/redux/store";
 import { Button, Card, Col, Image, Row } from "antd";
-
-const rowFilmCardStyle: React.CSSProperties = {
-  justifyContent: "center",
-};
-
-const cardFilmStyle: React.CSSProperties = {
-  width: "100%",
-  marginTop: 10,
-};
-
-const filmImageStyle: React.CSSProperties = {
-  height: "16em",
-};
-
-const actionsContainerStyle: React.CSSProperties = {
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "space-between",
-};
+import {
+  actionsContainerStyle,
+  cardFilmStyle,
+  filmImageStyle,
+  rowFilmCardStyle,
+} from "./styles";
 
 function FilmCard({ film }: { film: FilmEntity }) {
   const dispatch = useAppDispatch();

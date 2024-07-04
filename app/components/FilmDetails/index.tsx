@@ -3,17 +3,7 @@ import { defineSelectedFilm } from "@services/redux/slices/Films/reducers";
 import { useAppDispatch, useAppSelector } from "@services/redux/store";
 import { Image, Modal, Space } from "antd";
 import React from "react";
-
-const modalStyles = {
-  top: 10,
-};
-
-const contentContainerStyles: React.CSSProperties = {
-  width: "100%",
-  marginTop: 25,
-  maxHeight: "490px",
-  overflowY: "auto",
-};
+import { contentContainerStyles, modalStyles } from "./styles";
 
 function FilmDetails() {
   const dispatch = useAppDispatch();

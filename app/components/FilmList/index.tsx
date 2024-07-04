@@ -4,30 +4,12 @@ import { useFilmList } from "./hooks/useFilmList";
 import { Col, Pagination, Space } from "antd";
 import FilmCard from "@components/FilmCard";
 import FilmDetails from "@components/FilmDetails";
-import { CONSTANTS_VALUES } from "@infrastructure/values";
 import React from "react";
-
-const filmsColumnStyles: React.CSSProperties = {
-  width: "100%",
-  // backgroundColor: "red",
-  height: `calc(${CONSTANTS_VALUES.CONTENT_HEIGHT} - 10vh)`,
-  justifyItems: "center",
-  alignItems: "center",
-  overflowY: "auto",
-};
-
-const paginationContainerStyles: React.CSSProperties = {
-  backgroundColor: "#ccc",
-  width: "100%",
-  justifyContent: "center",
-  height: `calc(${CONSTANTS_VALUES.CONTENT_HEIGHT} - 80vh)`,
-};
-
-const containerContentStyles: React.CSSProperties = {
-  width: "100%",
-  height: `calc(${CONSTANTS_VALUES.CONTENT_HEIGHT} - 10vh)`,
-  backgroundColor: "#ddd",
-};
+import {
+  containerContentStyles,
+  filmsColumnStyles,
+  paginationContainerStyles,
+} from "./styles";
 
 function FilmList() {
   const {
