@@ -1,6 +1,5 @@
 "use client";
-import { FilmList } from "@components";
-import AppContainer from "@components/AppContainer";
+import { FilmList, AppContainer } from "@components";
 
 export default function Home() {
   return (
