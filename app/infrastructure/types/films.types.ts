@@ -14,6 +14,11 @@ export type FilmEntity = {
   Awards: string;
   Language: string;
   localRating: number;
+  Actors: string;
+  Released: string;
+  imdbVotes: string;
+  Runtime: string;
+  Metascore: string;
 };
 
 export interface FilmsState extends ListEntityState<FilmEntity> {

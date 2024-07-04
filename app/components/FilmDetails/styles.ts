@@ -8,3 +8,16 @@ export const contentContainerStyles: React.CSSProperties = {
   maxHeight: "490px",
   overflowY: "auto",
 };
+
+export const thirdInformationColumnDetailsStyle: React.CSSProperties = {
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
+  alignItems: "center",
+  paddingLeft: 28,
+};
+
+export const extraThirdInformationColumnContentStyle: React.CSSProperties = {
+  width: "100%",
+  //   paddingLeft: 10,
+};
