@@ -38,7 +38,7 @@ export const createFilmRatingRegister = (imdbId: string, rating: number) => {
     } else {
       localStorage.setItem(
         CONSTANTS_VALUES.LOCAL_STORAGE_RATING_ITEM_NAME,
-        JSON.stringify({ imdbId: rating })
+        JSON.stringify({ [`${imdbId}`]: rating })
       );
     }
 
