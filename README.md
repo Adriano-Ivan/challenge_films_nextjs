@@ -1,8 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Essa é uma aplicação em [Next.js](https://nextjs.org/), criada com [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
 
-## Getting Started
+# LISTAGEM DE FILMES
 
-First, run the development server:
+## Instalação de dependências
+
+Algumas formas de instalar as dependências
+
+```bash
+npm install
+# or
+yarn
+```
+
+## Execução da aplicação:
 
 ```bash
 npm run dev
@@ -14,23 +24,25 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse [http://localhost:3000](http://localhost:3000) para testar a aplicação.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Listagem paginada
+- Modal de detalhamento
+- Input de pesquisa por nome
+- Classificação em estrelas (classificação armazenada em Local Storage)
 
-## Learn More
+## Algumas imagens
 
-To learn more about Next.js, take a look at the following resources:
+### Inicial
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![alt Tela inicial](/home_site_img.png "Home")
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Input de pesquisa
 
-## Deploy on Vercel
+![alt Input de Pesquisa](/site_search_img.png "Input de pesquisa")
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Modal de detalhamento
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![alt Modal de detalhes](/detalhes_img.png "Modal de detalhamento")

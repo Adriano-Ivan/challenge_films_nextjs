@@ -26,7 +26,6 @@ const filmsSlice = createSlice({
         state.listStatus = HttpRequestStatus.loading;
       })
       .addCase(listFilmsAsync.fulfilled, (state, action) => {
-        console.log("actoin", action);
         state.listStatus = HttpRequestStatus.succeeded;
         state.entities = action.payload.data.map((film) => {
           const localRating = getFilmRatingRegister(film.imdbID);

@@ -12,8 +12,6 @@ import {
   modalStyles,
   thirdInformationColumnDetailsStyle,
 } from "./styles";
-import TextTitle from "@components/utils/TextTitle";
-import AppParagraph from "@components/utils/AppParagraph";
 import AppRatingStar from "@components/utils/AppRatingStars";
 import EntitledText from "@components/utils/EntitledText";
 

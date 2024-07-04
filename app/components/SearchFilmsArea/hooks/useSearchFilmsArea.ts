@@ -19,12 +19,10 @@ export const useSearchFilmsArea = () => {
       .filter((option) =>
         option.label.toLocaleLowerCase().includes(searchValue)
       ) as never as DefaultOptionType[];
-    console.log("optionsFlms", optionsFilms);
+
     return optionsFilms;
   }, [searchValue, filmsDataRedux.entities]);
   const onChange = (_: any, option: DefaultOptionType) => {
-    console.log("option", option);
-
     const selectedFilm = filmsDataRedux.entities.find(
       (film) => film.imdbID === option.value
     );
@@ -34,10 +32,8 @@ export const useSearchFilmsArea = () => {
   };
 
   const onSearch = (value: string) => {
-    console.log("value", value, value.length);
     setSearchValue(value.trim().toLocaleLowerCase());
   };
 
-  console.log("these are options", options);
   return { options, onChange, onSearch };
 };

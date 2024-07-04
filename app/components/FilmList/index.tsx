@@ -36,13 +36,6 @@ function FilmList() {
             return <FilmCard film={f} key={`${f.imdbID}`} />;
           })}
         </Col>
-        {/* </Space> */}
-        {/* <Space direction="vertical">
-            {dataFilms.map((f: FilmEntity, i: number) => {
-              return <FilmCard film={f} />;
-            })}
-          </Space> */}
-        {/* </Space> */}
       </Space>
 
       <Space style={paginationContainerStyles}>

@@ -4,11 +4,9 @@ export const getFilmsRatingsRegister = () => {
   const item = localStorage.getItem(
     CONSTANTS_VALUES.LOCAL_STORAGE_RATING_ITEM_NAME
   );
-  console.log("item", item);
 
   if (item) {
     const itemObj = JSON.parse(item);
-    console.log("itemObj", itemObj);
     return itemObj;
   }
 
